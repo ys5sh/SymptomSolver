@@ -6,8 +6,6 @@ import google.generativeai as genai
 from api_key import api_key
 
 
-
-
 # Configure API key
 genai.configure(api_key=api_key)
 
@@ -53,20 +51,42 @@ model = genai.GenerativeModel(
 
 st.set_page_config(page_title="Symptom Solver" , page_icon="icon.png")
 
+st.markdown("""
+<style>
+  footer {
+    visibility: hidden;
+  }
+  #deploy-btn {
+        visibility: hidden;
+    }
+  #MainMenu {
+    visibility: hidden;
+  }
+  header {
+    visibility: hidden;
+  }
+  
+</style>
+""", unsafe_allow_html=True)
 
 #logo
-st.image("logo.png", width=300) 
+st.image("logo.png", width=200); 
 
 #set the title
-st.title("Not feeling well? Snap a pic of your symptom and we'll help.")
-
+st.title("Not feeling well? Snap a pic of your symptom & injury and we'll help.")
+st.image("cover.png", use_column_width=True)
 #set the description
 st.subheader("AI Doctor : Your Personal Health Advisor")
 
 st.write("Experience cutting-edge healthcare with our AI Doctor. Accurately analyze symptoms, receive detailed reports outlining potential health issues, and get personalized treatment recommendations. Our AI offers clear next steps and empowers you to make informed decisions about your health. From initial assessment to ongoing care, we're here to support you.")
+# Create a list of image URLs and captions
+
+st.write("Upload the medical image for Analysis, sample Image : ")
+st.image("sample.jpg", width= 220)
+
 
 #upload
-uploaded_file = st.file_uploader("Upload the medical image for Analysis", type = ["png", "jpg", "jpeg"])
+uploaded_file = st.file_uploader ("Upload Image here : ",type = ["png", "jpg", "jpeg"])
 if uploaded_file:
     st.image(uploaded_file, width= 300, caption= "uploaded Medical Image")
 submit_button = st.button("Generate the Analysis")
@@ -86,3 +106,5 @@ if submit_button:
     response = model.generate_content(prompt_parts)
 
     st.write(response.text)
+
+st.write("Developed by Yash and Yashika ✨")
