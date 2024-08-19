@@ -1,5 +1,10 @@
 Project Name: Symptom Solver (AI Doctor)
 
+Website : https://symptom-solver-ai.onrender.com/
+
+![Screenshot 2024-08-18 195602](https://github.com/user-attachments/assets/9e15c1d5-7b31-42e8-9fbe-08cc8c8d916a)
+
+
 Description:
 
 This Streamlit application provides an AI-powered interface for analyzing medical images and suggesting potential health issues. It guides users through a four-step process:
