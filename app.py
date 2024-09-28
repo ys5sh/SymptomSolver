@@ -107,4 +107,4 @@ if submit_button:
 
     st.write(response.text)
 
-st.write("Developed by Yash and Yashika ✨")
+st.write("Developed by Yash")
